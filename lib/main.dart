@@ -1,5 +1,3 @@
-import 'package:estate_app/screens/home_screens/home_screen.dart';
-import 'package:estate_app/screens/home_screens/profilescreen.dart';
 import 'package:estate_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,8 +16,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: const Color(0xffF4F5FF),
         ),
         debugShowCheckedModeBanner: false,
-        home: SplashScreen()
-        // home: ProfileScreen(),
+        home: const SplashScreen()
     );
   }
 }
