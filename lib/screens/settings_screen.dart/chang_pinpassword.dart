@@ -42,11 +42,11 @@ class _ChangePasswordPinState extends State<ChangePasswordPin> {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 23.5,
             ),
             MatButton(ontap: () {}, text: 'New Password'),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             MatButton(ontap: () {}, text: 'New Pin'),

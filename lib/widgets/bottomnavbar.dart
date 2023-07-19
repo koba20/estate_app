@@ -3,7 +3,6 @@ import 'package:estate_app/screens/home_screens/home_screen.dart';
 import 'package:estate_app/screens/home_screens/profilescreen.dart';
 import 'package:estate_app/widgets/navigation_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class BottomNavBar extends StatefulWidget {
   BottomNavBar({

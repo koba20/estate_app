@@ -38,16 +38,14 @@ class _WalletScreenState extends State<WalletScreen> {
           ),
         ),
       ),
-      body: ListView(padding: EdgeInsets.symmetric(horizontal: 33), children: [
-        Column(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            // Add scrollable content here
-            // Center(child: SvgPicture.asset('assets/svg/padlock.svg')),
-
-            WalletCard(
+            const WalletCard(
               icon: Icons.wallet,
               bigText: 'Wallet Balance',
               amount: '150,500',
@@ -55,11 +53,10 @@ class _WalletScreenState extends State<WalletScreen> {
               walletscreentext1: 'Top Up',
               walletscreentext2: 'Withdraw',
             ),
-
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -78,28 +75,31 @@ class _WalletScreenState extends State<WalletScreen> {
                 )
               ],
             ),
-            SizedBox(
-              height: 23,
+            const SizedBox(
+              height: 15,
             ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.zero,
-              itemCount: listitems.length,
-              itemBuilder: (BuildContext context, int index) {
-                final transaction = listitems[index];
-                return TransactionListItem(
-                  bigText: transaction['bigText'],
-                  time: transaction['time'],
-                  date: transaction['date'],
-                  amount: transaction['amount'],
-                  svgimage: transaction['svg'],
-                );
-              },
+            Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                primary: true,
+                physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.zero,
+                itemCount: listitems.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final transaction = listitems[index];
+                  return TransactionListItem(
+                    bigText: transaction['bigText'],
+                    time: transaction['time'],
+                    date: transaction['date'],
+                    amount: transaction['amount'],
+                    svgimage: transaction['svg'],
+                  );
+                },
+              ),
             )
           ],
         ),
-      ]),
+      ),
     );
   }
 }

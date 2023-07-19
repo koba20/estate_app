@@ -17,11 +17,11 @@ class SettingListItem extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         width: double.infinity,
         height: 80.66,
         decoration: BoxDecoration(
-            border: Border.all(color: Color(0xff4285F4), width: 1),
+            border: Border.all(color: const Color(0xff4285F4), width: 1),
             borderRadius: BorderRadius.circular(40)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,16 +29,16 @@ class SettingListItem extends StatelessWidget {
             Container(
               child: Row(children: [
                 SvgPicture.asset('assets/svg/$svgimage.svg'),
-                SizedBox(
+                const SizedBox(
                   width: 18.25,
                 ),
                 Text(
                   text,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                 ),
               ]),
             ),
-            CircleAvatar(
+            const CircleAvatar(
                 backgroundColor: Colors.white,
                 child: Icon(
                   Icons.arrow_forward_ios_rounded,
