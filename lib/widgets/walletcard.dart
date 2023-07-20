@@ -2,6 +2,8 @@ import 'package:estate_app/screens/home_screens/wallet_screen.dart';
 import 'package:estate_app/widgets/matButton.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/home_screens/bills_screen.dart';
+
 class WalletCard extends StatelessWidget {
   final IconData icon;
   final String bigText;
@@ -87,7 +89,15 @@ class WalletCard extends StatelessWidget {
                   children: [
                     Expanded(
                         child:
-                            MatButton(ontap: () {}, text: walletscreentext1!)),
+                            MatButton(ontap: () {
+                              showModalBottomSheet<void>(
+                                context: context,
+                                backgroundColor: Colors.transparent,
+                                builder: (BuildContext context) {
+                                  return const BillsModal();
+                                }
+                              );
+                            }, text: walletscreentext1!)),
                     SizedBox(
                       width: 20,
                     ),

@@ -1,3 +1,4 @@
+import 'package:estate_app/screens/home_screens/edit_profile.dart';
 import 'package:estate_app/screens/home_screens/transaction_screen.dart';
 import 'package:estate_app/screens/settings_screen.dart/chang_pinpassword.dart';
 import 'package:estate_app/screens/settings_screen.dart/contactlistscreen.dart';
@@ -84,20 +85,25 @@ class ProfileScreen extends StatelessWidget {
                           fontWeight: FontWeight.w600),
                     ),
                     const Spacer(),
-                    Container(
-                      height: 52,
-                      padding: const EdgeInsets.symmetric(horizontal: 9),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color(0xffFFffff), width: 2),
-                          borderRadius: BorderRadius.circular(7)),
-                      child: const Center(
-                        child: Text(
-                          'Edit Profile',
-                          style: TextStyle(
-                              color: Color(0xffffffff),
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const EditProfileScreen(),));
+                      },
+                      child: Container(
+                        height: 52,
+                        padding: const EdgeInsets.symmetric(horizontal: 9),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: const Color(0xffFFffff), width: 2),
+                            borderRadius: BorderRadius.circular(7)),
+                        child: const Center(
+                          child: Text(
+                            'Edit Profile',
+                            style: TextStyle(
+                                color: Color(0xffffffff),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16),
+                          ),
                         ),
                       ),
                     )
@@ -109,7 +115,6 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
         child: SafeArea(
             child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
@@ -269,7 +274,10 @@ class HelpSupportModal extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(
-            children: [const Spacer(), SvgPicture.asset('assets/svg/Vector-4.svg')],
+            children: [
+              const Spacer(),
+              SvgPicture.asset('assets/svg/Vector-4.svg')
+            ],
           ),
           const Text(
             'Help & Support',

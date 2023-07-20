@@ -1,6 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:estate_app/constants.dart';
+import 'package:estate_app/screens/home_screens/bills_screen.dart';
 import 'package:estate_app/widgets/smallcard.dart';
 import 'package:estate_app/widgets/transactionlist.dart';
 import 'package:estate_app/widgets/walletcard.dart';
@@ -28,8 +29,8 @@ class _HomePageState extends State<HomePage> {
                 height: 293,
                 width: double.infinity,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10, vertical: 50),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
                   child: Column(
                     children: [
                       Row(
@@ -90,12 +91,10 @@ class _HomePageState extends State<HomePage> {
                           const Spacer(),
                           Container(
                             padding: const EdgeInsets.symmetric(
-                              vertical: 10,
-                              horizontal: 12),
+                                vertical: 10, horizontal: 12),
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: const Color(0xffFF0000),
-                                    width: 2),
+                                    color: const Color(0xffFF0000), width: 2),
                                 borderRadius: BorderRadius.circular(7)),
                             child: const Row(
                               children: [
@@ -124,13 +123,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const Align(
-                alignment: Alignment.bottomCenter,
-                child: WalletCard(
-                  icon: Icons.wallet, 
-                  bigText: "Wallet Balance", 
-                  amount: "150, 00"
-                )
-              )
+                  alignment: Alignment.bottomCenter,
+                  child: WalletCard(
+                      icon: Icons.wallet,
+                      bigText: "Wallet Balance",
+                      amount: "150, 00"))
             ]),
           ),
           const SizedBox(
@@ -140,16 +137,24 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 13),
             child: Container(
               width: double.infinity,
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SmallCardWidget(
-                    svgname: 'Card',
-                    smalltext: 'Bills',
-                    secondgradientcolor: Color(0xFF03C336),
-                    firstboxshadowcolor: Color(0xFF45BE66),
-                    firstgradientcolor: Color(0xFF659EFC),
-                    secondboxshadowcolor: Color(0xFF4285F4),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BillsScreen()));
+                    },
+                    child: SmallCardWidget(
+                      svgname: 'Card',
+                      smalltext: 'Bills',
+                      secondgradientcolor: Color(0xFF03C336),
+                      firstboxshadowcolor: Color(0xFF45BE66),
+                      firstgradientcolor: Color(0xFF659EFC),
+                      secondboxshadowcolor: Color(0xFF4285F4),
+                    ),
                   ),
                   SmallCardWidget(
                     svgname: 'Icon',
@@ -162,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SmallCardWidget(
                     svgname: 'Unlock',
-                    smalltext: 'Bills',
+                    smalltext: 'Gate',
                     secondgradientcolor: Color(0xFF800080),
                     firstboxshadowcolor: Color(0xFF800080),
                     firstgradientcolor: Color(0xFF4285F4),
@@ -172,7 +177,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 13),
             child: Row(
