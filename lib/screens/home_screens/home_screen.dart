@@ -2,6 +2,7 @@
 
 import 'package:estate_app/constants.dart';
 import 'package:estate_app/screens/home_screens/bills_screen.dart';
+import 'package:estate_app/screens/home_screens/gate_screen.dart';
 import 'package:estate_app/widgets/smallcard.dart';
 import 'package:estate_app/widgets/transactionlist.dart';
 import 'package:estate_app/widgets/walletcard.dart';
@@ -165,13 +166,21 @@ class _HomePageState extends State<HomePage> {
                     secondboxshadowcolor: Color(0xFFFF0000),
                     color: Color(0xfffa9169),
                   ),
-                  SmallCardWidget(
-                    svgname: 'Unlock',
-                    smalltext: 'Gate',
-                    secondgradientcolor: Color(0xFF800080),
-                    firstboxshadowcolor: Color(0xFF800080),
-                    firstgradientcolor: Color(0xFF4285F4),
-                    secondboxshadowcolor: Color(0xFF4285F4),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GateScreen()));
+                    },
+                    child: SmallCardWidget(
+                      svgname: 'Unlock',
+                      smalltext: 'Gate',
+                      secondgradientcolor: Color(0xFF800080),
+                      firstboxshadowcolor: Color(0xFF800080),
+                      firstgradientcolor: Color(0xFF4285F4),
+                      secondboxshadowcolor: Color(0xFF4285F4),
+                    ),
                   ),
                 ],
               ),

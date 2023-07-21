@@ -262,14 +262,12 @@ class BillsModal extends StatelessWidget {
     return Container(
       height: 337,
       width: double.infinity,
-      //margin: EdgeInsets.fromLTRB(7, 0, 7, 7),
       decoration: BoxDecoration(
           color: Theme.of(context).scaffoldBackgroundColor,
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(40),
               topRight: Radius.circular(40),
-              bottomLeft: Radius.circular(50),
-              bottomRight: Radius.circular(50))),
+            )),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
         child: Column(
