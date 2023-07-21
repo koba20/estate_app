@@ -39,7 +39,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
       body: SingleChildScrollView(
         child: SafeArea(
             child: Padding(
-          padding: EdgeInsets.fromLTRB(32, 40, 32, 0),
+          padding: const EdgeInsets.fromLTRB(32, 40, 32, 0),
           child: Text(Loremtext),
         )),
       ),

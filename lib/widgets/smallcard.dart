@@ -45,21 +45,21 @@ class SmallCardWidget extends StatelessWidget {
           BoxShadow(
             //color: Color(0xFF45BE66).withOpacity(0.4),
             color: firstboxshadowcolor.withOpacity(0.4),
-            offset: Offset(4, 4),
+            offset: const Offset(4, 4),
             blurRadius: 15,
             spreadRadius: 0,
           ),
           BoxShadow(
             //color: Color(0xFF4285F4).withOpacity(0.4),
             color: secondboxshadowcolor.withOpacity(0.4),
-            offset: Offset(1, 4),
+            offset: const Offset(1, 4),
             blurRadius: 12,
             spreadRadius: 0,
           ),
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -67,7 +67,7 @@ class SmallCardWidget extends StatelessWidget {
                 'assets/svg/$svgname.svg'), // Replace with your SVG image
             Text(
               smalltext,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,

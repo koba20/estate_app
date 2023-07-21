@@ -1,3 +1,4 @@
+import 'package:estate_app/screens/home_screens/edit_profile.dart';
 import 'package:estate_app/screens/home_screens/transaction_screen.dart';
 import 'package:estate_app/screens/settings_screen.dart/chang_pinpassword.dart';
 import 'package:estate_app/screens/settings_screen.dart/contactlistscreen.dart';
@@ -18,9 +19,9 @@ class ProfileScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         toolbarHeight: 120, // Set this height
         flexibleSpace: Container(
-          color: Color(0xff4285F4),
+          color: const Color(0xff4285F4),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(25, 41.5, 25, 24),
+            padding: const EdgeInsets.fromLTRB(25, 41.5, 25, 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -35,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
                             color: Colors.black,
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 63.34,
                     ),
                     Row(
@@ -54,49 +55,48 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Row(
-                    children: [
-                      Stack(
-                        children: [
-                          CircleAvatar(
-                            backgroundImage:
-                                AssetImage('assets/images/Frame 2.png'),
-                            radius: 25,
-                          ),
-                          Positioned(
-                              bottom: 0,
-                              right: 0,
-                              child: Icon(
-                                Icons.camera_alt_outlined,
-                                size: 15,
-                                color: Colors.black,
-                              ))
-                        ],
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'John Doe',
-                        style: TextStyle(
-                            color: Color(0xffffffff),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      SizedBox(
-                        width: 32,
-                      ),
-                      Container(
-                        width: 119,
+                Row(
+                  children: [
+                    const Stack(
+                      children: [
+                        CircleAvatar(
+                          backgroundImage:
+                              AssetImage('assets/images/Frame 2.png'),
+                          radius: 25,
+                        ),
+                        Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Icon(
+                              Icons.camera_alt_outlined,
+                              size: 15,
+                              color: Colors.black,
+                            ))
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Text(
+                      'John Doe',
+                      style: TextStyle(
+                          color: Color(0xffffffff),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    const Spacer(),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const EditProfileScreen(),));
+                      },
+                      child: Container(
                         height: 52,
                         padding: const EdgeInsets.symmetric(horizontal: 9),
                         decoration: BoxDecoration(
                             border: Border.all(
                                 color: const Color(0xffFFffff), width: 2),
                             borderRadius: BorderRadius.circular(7)),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Edit Profile',
                             style: TextStyle(
@@ -105,9 +105,9 @@ class ProfileScreen extends StatelessWidget {
                                 fontSize: 16),
                           ),
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 )
               ],
             ),
@@ -123,7 +123,7 @@ class ProfileScreen extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.zero,
-                    prefixIcon: Icon(Icons.search),
+                    prefixIcon: const Icon(Icons.search),
                     hintText: 'Search Settings',
                     hintStyle:
                         const TextStyle(fontSize: 15, color: Colors.grey),
@@ -131,15 +131,15 @@ class ProfileScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0),
                         borderSide: const BorderSide(color: Colors.grey))),
               ),
-              SizedBox(
-                height: 49,
+              const SizedBox(
+                height: 30,
               ),
               SettingListItem(
                 ontap: () {
                   Navigator.of(context).push(PageRouteBuilder(
                     transitionDuration: const Duration(milliseconds: 200),
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        TransactionScreen(),
+                        const TransactionScreen(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                       return SlideTransition(
@@ -155,14 +155,14 @@ class ProfileScreen extends StatelessWidget {
                 text: 'Transaction History',
                 svgimage: 'History',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              SettingListItem(
+              const SettingListItem(
                 text: 'Notification',
                 svgimage: 'Notification',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SettingListItem(
@@ -170,7 +170,7 @@ class ProfileScreen extends StatelessWidget {
                   Navigator.of(context).push(PageRouteBuilder(
                     transitionDuration: const Duration(milliseconds: 200),
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        ChangePasswordPin(),
+                        const ChangePasswordPin(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                       return SlideTransition(
@@ -186,7 +186,7 @@ class ProfileScreen extends StatelessWidget {
                 text: 'Password/PIN',
                 svgimage: 'Lock',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SettingListItem(
@@ -195,13 +195,13 @@ class ProfileScreen extends StatelessWidget {
                       context: context,
                       backgroundColor: Colors.transparent,
                       builder: (BuildContext context) {
-                        return HelpSupportModal();
+                        return const HelpSupportModal();
                       });
                 },
                 text: 'Help & Support',
                 svgimage: 'Headset',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SettingListItem(
@@ -209,7 +209,7 @@ class ProfileScreen extends StatelessWidget {
                   Navigator.of(context).push(PageRouteBuilder(
                     transitionDuration: const Duration(milliseconds: 200),
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        TermsAndConditions(),
+                        const TermsAndConditions(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                       return SlideTransition(
@@ -225,20 +225,20 @@ class ProfileScreen extends StatelessWidget {
                 text: 'Terms & Conditions',
                 svgimage: 'Clipboard-alt',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               MaterialButton(
                 height: 50,
                 minWidth: double.infinity,
                 elevation: 0,
-                color: Color(0xffFF0000),
+                color: const Color(0xffFF0000),
                 disabledColor: Colors.blue.shade200,
                 disabledTextColor: Colors.white.withOpacity(.5),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 onPressed: () {},
-                child: Text('Logout',
+                child: const Text('Logout',
                     style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w400,
@@ -265,7 +265,7 @@ class HelpSupportModal extends StatelessWidget {
       //margin: EdgeInsets.fromLTRB(7, 0, 7, 7),
       decoration: BoxDecoration(
           color: Theme.of(context).scaffoldBackgroundColor,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(40),
               topRight: Radius.circular(40),
               bottomLeft: Radius.circular(50),
@@ -274,16 +274,19 @@ class HelpSupportModal extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(
-            children: [Spacer(), SvgPicture.asset('assets/svg/Vector-4.svg')],
+            children: [
+              const Spacer(),
+              SvgPicture.asset('assets/svg/Vector-4.svg')
+            ],
           ),
-          Text(
+          const Text(
             'Help & Support',
             style: TextStyle(
                 color: Color(0xff545454),
                 fontSize: 22,
                 fontWeight: FontWeight.w700),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           SettingListItem(
@@ -307,7 +310,7 @@ class HelpSupportModal extends StatelessWidget {
             text: 'FAQ',
             svgimage: 'Document',
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           SettingListItem(
@@ -315,7 +318,7 @@ class HelpSupportModal extends StatelessWidget {
               Navigator.of(context).push(PageRouteBuilder(
                 transitionDuration: const Duration(milliseconds: 200),
                 pageBuilder: (context, animation, secondaryAnimation) =>
-                    ContactListScreen(),
+                    const ContactListScreen(),
                 transitionsBuilder:
                     (context, animation, secondaryAnimation, child) {
                   return SlideTransition(
